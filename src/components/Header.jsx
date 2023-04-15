@@ -43,11 +43,20 @@ function Header() {
           >
             <NavLink
               activeStyle={activeLink}
-              to="/attendance"
+              to="/"
               style={{ textDecoration: "none" }}
             >
               <Typography variant="body1" component="span" mr={2}>
-                Clock In
+               Home
+              </Typography>
+            </NavLink>
+            <NavLink
+              activeStyle={activeLink}
+              to="/attendance"
+              style={{ textDecoration: "none" }}
+            >
+              <Typography variant="body1" component="span" mr="1rem">
+              Clock In
               </Typography>
             </NavLink>
             <NavLink
@@ -56,7 +65,7 @@ function Header() {
               style={{ textDecoration: "none" }}
             >
               <Typography variant="body1" component="span" mr="1rem">
-                Report
+                Colleagues
               </Typography>
             </NavLink>
             <NavLink
@@ -120,6 +129,30 @@ function Header() {
                   </ListItemButton>
                 </NavLink>
                 <NavLink
+                  exact
+                  activeStyle={activeLink}
+                  to="/attendance"
+                  style={{ textDecoration: "none" }}
+                  className="active-link"
+                >
+                  <ListItemButton
+                    sx={{
+                      color: "#325F70",
+                      "& .Mui-hover": {
+                        bgColor: "#54AEB2",
+                      },
+                    }}
+                  >
+                    <Typography
+                      variant="body1"
+                      component="span"
+                      color="#325F70"
+                    >
+                      ClockIn / ClockOut
+                    </Typography>
+                  </ListItemButton>
+                </NavLink>
+                <NavLink
                   activeStyle={activeLink}
                   to="/employees"
                   style={{ textDecoration: "none" }}
@@ -134,7 +167,7 @@ function Header() {
                     }}
                   >
                     <Typography variant="body1" component="span">
-                      Reports
+                     Colleagues
                     </Typography>
                   </ListItemButton>
                 </NavLink>
