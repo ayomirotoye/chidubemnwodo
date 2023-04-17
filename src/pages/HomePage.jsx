@@ -9,8 +9,10 @@ function HomePage() {
     setFilterDate(event.target.value);
   };
   return (
-    <Container maxWidth="md" sx={{marginTop:'2rem', marginBottom:"5rem"}}>
-        <Typography variant="h4" gutterBottom component="h1">Attendance List</Typography>
+    <Container maxWidth="md" sx={{ marginTop: "2rem", marginBottom: "5rem" }}>
+      <Typography variant="h4" gutterBottom component="h1">
+        Attendance List
+      </Typography>
       <TextField
         label="Filter by Date"
         type="date"
@@ -19,7 +21,7 @@ function HomePage() {
         InputLabelProps={{
           shrink: true,
         }}
-        style={{ marginTop: "1rem", marginBottom:"2rem" }}
+        style={{ marginTop: "1rem", marginBottom: "2rem" }}
       />
       <EmployeeTable />
     </Container>

@@ -1,27 +1,30 @@
 import {
-  Avatar,
+
   Card,
   CardContent,
-  CardHeader,
+  
   CardMedia,
   Typography,
 } from "@mui/material";
 import React from "react";
+import { useAuth } from "../context/AuthProvider";
 
 function EmployeeCard() {
+  const { user } = useAuth();
   return (
-    <Card sx={{ maxWidth: 240, minWidth:"fit-content" }}>
+    <Card sx={{ maxWidth: 240, minWidth: "fit-content" }}>
       <CardMedia
         sx={{ height: 140 }}
-        image="/static/images/cards/contemplative-reptile.jpg"
+        image={user?.photoURL}
         title="Employee photo"
+        component="img"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Employee Name
+          {user?.displayName || "Name"}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          employee.mail@example.com
+          {user?.email || "example.mail@mail.com"}
         </Typography>
       </CardContent>
     </Card>
